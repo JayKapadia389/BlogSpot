@@ -55,7 +55,7 @@ function Login() {
 
             <form className="auth-form">
 
-                <h2 className='blogspot auth-blogspot' >blogspot</h2>
+                <h2 className='Lettura auth-Lettura' >Lettura</h2>
 
                 <p className='error-box' style={{ display : (message == "") ? "none" : "block"}}>
                     <span className='error-icon-span'><AiOutlineExclamationCircle/></span>

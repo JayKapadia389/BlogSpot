@@ -95,7 +95,7 @@ function Signup() {
 
             <form className="auth-form">
 
-                <h2 className='blogspot auth-blogspot' >blogspot</h2>
+                <h2 className='Lettura auth-Lettura' >Lettura</h2>
 
                 <div id="username-wrap">
                     <label htmlFor='first-name'>first name

@@ -38,8 +38,8 @@ function Home() {
 
       <div id="home-dark-filter">
       <div id="home-trans-container">
-              <div id="home-blogspot-wrap">
-                <h1 id="h1-blogspot" className="blogspot">blogspot</h1>
+              <div id="home-Lettura-wrap">
+                <h1 id="h1-Lettura" className="Lettura">Lettura</h1>
                 <h2 id="sub-title">read, write and explore</h2>
               </div>
 

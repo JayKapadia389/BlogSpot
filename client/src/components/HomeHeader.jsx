@@ -20,8 +20,8 @@ function HomeHeader(){
 
     return(
       <header id='home-header' className='hide'>
-          <span id="home-header-blogspot" className='blogspot'>
-          blogspot
+          <span id="home-header-Lettura" className='Lettura'>
+          Lettura
           </span>
         </header>
     )

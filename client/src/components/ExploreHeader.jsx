@@ -82,8 +82,8 @@ function ExploreHeader(){
             <div>
               <header id="explore-header" className='show'>
 
-                  <span id="explore-header-blogspot"className="blogspot">
-                    blogspot
+                  <span id="explore-header-Lettura"className="Lettura">
+                    Lettura
                   </span>
       
                   <div id="search-bar-div">

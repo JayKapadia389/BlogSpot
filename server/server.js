@@ -8,10 +8,10 @@ const PORT = 3000;
 const mongoUri = process.env.MONGO_URI;
 const mongoose = require('mongoose');
 const corsOptions = {
-    // origin : "http://localhost:5173",     
-    origin : "https://blog-spot-phi.vercel.app",     
+    origin : "http://localhost:5173",     
+    // origin : "https://blog-spot-phi.vercel.app",     
     credentials:true,
-    optionSuccessStatus:200        
+    optionsSuccessStatus:200        
 }
 
 app.use(cookieParser());
@@ -182,7 +182,7 @@ app.post("/signup" , async (req , res)=>{
         lastName,
         emailId,    
         password,
-        bio:"hey there ! I am using blogspot.",
+        bio:"hey there ! I am using Lettura.",
         profilePic: "https://res.cloudinary.com/dgqba5trl/image/upload/v1696008033/tiktok-no-profile-picture_n2pgwo.avif",
         followerCount: 0,
         followingCount: 0 ,

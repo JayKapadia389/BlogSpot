@@ -98,12 +98,12 @@
     justify-content: space-between;
   }
 
-  #h1-blogspot{
+  #h1-Lettura{
     font-size: min(9vw,100px);
     
   }
   
-  #home-blogspot-wrap{
+  #home-Lettura-wrap{
     height:175px;
     width:40%;
     color:var(--dark);
@@ -143,18 +143,18 @@
     transform: scale(0.8);
   }
 
-  #home-header-blogspot{
+  #home-header-Lettura{
     color:white;
     font-size: 30px;
   }
 
-  #explore-header-blogspot{
+  #explore-header-Lettura{
     font-size: 30px;
     margin-right: 25px;
     color:var(--dark);
   }
   
-  .blogspot{
+  .Lettura{
     font-family: 'Lobster Two', sans-serif;
     font-weight: 300;
   }
@@ -273,7 +273,7 @@
     color:var(--dark);
   }
 
-  .auth-blogspot{
+  .auth-Lettura{
     font-size: 48px;
     text-align: center ;
   }
@@ -1567,7 +1567,7 @@
     #sub-title{
       font-size: max(2vw,25px);
     }
-    #home-blogspot-wrap{
+    #home-Lettura-wrap{
       align-self: flex-start;
       width:100%;
     }
@@ -1606,7 +1606,7 @@
 
   @media(max-width:480px){
     
-    #h1-blogspot{
+    #h1-Lettura{
       font-size: 60px;
     }
 
@@ -1854,7 +1854,7 @@
 
   @media(max-width:480px){
 
-    #explore-header-blogspot{
+    #explore-header-Lettura{
       margin-right: 15px;
     }
   
