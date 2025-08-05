@@ -1,63 +1,41 @@
-function People(){
+import {useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
-    let arr = [
-        {
-            name:"Jay Kapadia",
-            bio:"Founder of Convince & Convert, a digital media and marketing company. NY Times best-selling author, global keynote speaker. New book: Hug Your Haters"
-        },
-        {
-            name:"Jay Davidson",
-            bio:"Retired teacher (San Francisco, 1969–2003); Returned Peace Corps Volunteer (Mauritania, 2003–2005); public speaker, artist, writer, traveler, world citizen"
-        },
-        {
-            name:"Jay C Wells",
-            bio:"I teach journalism at NYU, and direct the Membership Puzzle Project. Advisor to De Correspondent as they expand to English-language publishing."
-        }
-        ,{
-            name:"Jay Acunzo",
-            bio:"Podcast host (Unthinkable) and writer trying to demystify the creative process to help you create more resonant, memorable work"
-        },
-        {
-            name:"Jay C Wells",
-            bio:"I teach journalism at NYU, and direct the Membership Puzzle Project. Advisor to De Correspondent as they expand to English-language publishing."
-        },
-        {
-            name:"Jay Cutler",
-            bio:"Founder of Convince & Convert, a digital media and marketing company. NY Times best-selling author, global keynote speaker. New book: Hug Your Haters"
-        },
-        {
-            name:"Jay Kapadia",
-            bio:"Founder of Convince & Convert, a digital media and marketing company. NY Times best-selling author, global keynote speaker. New book: Hug Your Haters"
-        },
-        {
-            name:"Jay Kapadia",
-            bio:"Founder of Convince & Convert, a digital media and marketing company. NY Times best-selling author, global keynote speaker. New book: Hug Your Haters"
-        }
-    ]
+function People(props){
+    let navigate = useNavigate();
 
-    
+    function parseBody(fullText){
+        let shortText = fullText.length > 200
+        ? fullText.slice(0, 197) + "..."
+        : fullText;
 
-    
+        return shortText ;
+    }
 
     return(
 
         <div id="people-component"> 
 
-
-        {arr.map((obj)=>{
+        {props.profilesArray.map((obj)=>{
             return(
 
                 <div className="people-card">
 
                 <div>
 
-                    <div className="profile">
+                    <div 
+                    className="profile"
+                    onClick={()=>{
+
+                        (obj.userId == props.currentUserId) ? navigate("/userprofile") : navigate(`/authorprofile?userId=${obj.userId}`) ;
+
+                    }}>
 
                         <div className="profile-pic-div pc-profile-pic-div">
-                            <img className="profile-pic" src="images/jay.jpg"></img>
+                            <img className="profile-pic" src={obj.profilePic}></img>
                         </div>
 
-                        <p className="pc-author">{obj.name}</p>
+                        <p className="pc-author">{obj.firstName} {obj.lastName}</p>
 
                         <div className="empty"></div>
 
@@ -67,7 +45,7 @@ function People(){
 
                     <div className="pc-bio">
 
-                        {obj.bio}                        
+                        {parseBody(obj.bio)}                        
 
                     </div>
 
@@ -83,11 +61,8 @@ function People(){
                 
             )
         })}
-           
-            
 
         </div>
-
     )
 }
 

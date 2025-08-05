@@ -441,8 +441,38 @@
     flex:1 0 auto;
   }
 
+  #explore-header-create-btn-div{
+    margin:0 20px;
+  }
+
+  #explore-header-create-btn{
+    padding:10px;
+    display: flex;
+    place-items: center;
+    background-color: #3498DB;
+    position : relative ;
+    z-index : 3 ;
+    height: 38px;
+    border-radius: 19px ;
+    border: none;
+    outline:0;
+    /* box-shadow:0px 3px 8px 0px grey; */
+  }
   
-  
+  #explore-header-create-btn > span {
+    font-family: poppins;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #explore-header-create-icon{
+    margin-right: 3px;
+    font-size: 1rem;
+      display: flex;
+    align-items: center;
+  }
   
   #explore-main{
     position: relative;
@@ -693,12 +723,14 @@
 
   #people-component{
     display:grid;
+    gap: 20px;
     grid-template-columns: 1fr 1fr;
   }
 
   .people-card{
     display: flex;
-    height: 200px;
+    justify-content: space-between;
+    height: 150px;
     margin: 20px 0;
   }
 
@@ -1051,14 +1083,14 @@
   }
 
   #userprofile-only-details{
-    /* display: flex; */
+    display: flex;
+    max-width: 60vw;
     flex-direction:column;
     justify-content:space-between;
   }
   
   #userprofile-profile-pic-div{
     height:100%;
-    /* width:220px; */
     aspect-ratio : 1 ;
     border:5px solid white;
     margin-right:40px;
@@ -1089,7 +1121,8 @@
   }
 
   #userprofile-bio{
-
+    width: inherit;
+    color:white;
   }
 
 

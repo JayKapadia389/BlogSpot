@@ -8,8 +8,8 @@ const PORT = 3000;
 const mongoUri = process.env.MONGO_URI;
 const mongoose = require('mongoose');
 const corsOptions = {
-    origin : "http://localhost:5173",     
-    // origin : "https://blog-spot-phi.vercel.app",     
+    // origin : "http://localhost:5173",     
+    origin : "https://lettura-one.vercel.app/",     
     credentials:true,
     optionsSuccessStatus:200        
 }
@@ -341,6 +341,22 @@ app.get("/explore" ,AuthenticateToken, async (req , res)=>{
 
     res.json({blogs});
 
+})
+
+app.get("/profiles" ,AuthenticateToken, async (req , res)=>{
+    let u = await Users.find({}) ;
+
+    let users = await Promise.all(u.map(async (user)=>{
+
+        let {profilePic, firstName, lastName, bio, userId } = user ;
+
+        return {profilePic, firstName, lastName, bio, userId}
+    })) ;
+
+    let emailId = req.payload.emailId ;
+    let currentUser = await Users.findOne({emailId}) ;
+
+    res.json({profilesArray : users , currentUserId : currentUser.userId});
 })
 
 app.get("/postarticle" ,AuthenticateToken, async (req , res)=>{

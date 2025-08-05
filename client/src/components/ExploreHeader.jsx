@@ -1,6 +1,7 @@
 import {useEffect, useRef , useState} from 'react';
 import { AiOutlineSearch } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
+import {BsPlusLg} from 'react-icons/bs';
 import axios from 'axios' ;
 import { be_url } from '/config'; 
 // import {userContext} from '../contexts/userContext';
@@ -107,6 +108,19 @@ function ExploreHeader(){
                     ></div>
       
                   <div className='empty'></div>
+
+                  <div id="explore-header-create-btn-div">
+                    <button id='explore-header-create-btn' onClick={()=>{navigate("/postarticle")}}>
+                      <span>
+                        <span>
+                          <BsPlusLg id="explore-header-create-icon"/>
+                        </span>
+                        <span>
+                          Create
+                        </span>
+                      </span>
+                    </button>
+                  </div>
       
                   <div id="header-profile-btn" onClick={()=>{ navigate("/userprofile"); console.log("userprofile")}}>
                     <img className="profile-pic" 

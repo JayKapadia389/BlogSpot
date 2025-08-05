@@ -77,14 +77,19 @@ function UserProfile(){
                         </div>
     
                         <div id="userprofile-only-details">
-    
-                                <p id="userprofile-name">
-                                    <span>{user.firstName}</span> <span>{user.lastName}</span>
-                                </p>
-    
-                                <div id='userprofile-bio'>
-                                    {user.bio}
+
+                                <div>
+
+                                    <p id="userprofile-name">
+                                        <span>{user.firstName}</span> <span>{user.lastName}</span>
+                                    </p>
+        
+                                    <div id='userprofile-bio'>
+                                        {user.bio}
+                                    </div>
+                                    
                                 </div>
+    
                                 {/* <div id="userprofile-email-wrap">
                                     <p id="userprofile-email">
                                         {user.emailId}

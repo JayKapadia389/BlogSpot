@@ -15,31 +15,52 @@ function Explore(){
     let [blogsPeopleToggle , setBlogsPeopleToggle] = useState("blogs");
     let [blogs , setBlogs] = useState( null ) ;
     // let [open , setOpen] = useState(true) ;
-
+    let [profilesArray , setProfilesArray] = useState(null) ; 
+    let [currentUserId , SetCurrentUserId] = useState("") ; 
     let navigate = useNavigate(); 
 
+    
     useEffect(()=>{ 
-
+        
         axios.get(be_url + "/explore" , {withCredentials : true})
-
+        
         .then((res)=>{
-
+            
             console.log(res.data);
             setBlogs(res.data.blogs) ;
             // setOpen(false) ;
-
-            })
-
+            
+        })
+        
         .catch((err)=>{
             console.log(err);
-
+            
             if(err.response.status == 401 || err.response.status == 498){
                 navigate("/login");
             }
         }) // path
-
+        
     },[])
+    
+    useEffect(()=>{
 
+        axios.get(be_url + "/profiles" , {withCredentials : true})
+    
+            .then((res)=>{
+    
+                setProfilesArray(res.data.profilesArray);
+                SetCurrentUserId(res.data.currentUserId);
+
+                })
+    
+            .catch((err)=>{
+    
+                if(err.response.status == 401 || err.response.status == 498){
+                    navigate("/login");
+                }
+            })
+
+      } , [])
 
     return(
         <div id="explore-wrap">
@@ -67,7 +88,18 @@ function Explore(){
 
                     </div>
 
-                    {blogsPeopleToggle == "blogs" ? <Blogs blogs={blogs} filter={filter} open={open} setFilter={setFilter}></Blogs> : <People></People>}
+                    {blogsPeopleToggle == "blogs" ? 
+                    <Blogs 
+                        blogs={blogs} 
+                        filter={filter} 
+                        open={open} 
+                        setFilter={setFilter}>
+                    </Blogs> 
+                    : 
+                    <People
+                        profilesArray = {profilesArray}
+                        currentUserId = {currentUserId}>
+                    </People>}
 
                 </main>
 
